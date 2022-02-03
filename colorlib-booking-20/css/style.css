@@ -162,3 +162,16 @@
 	width: 100%;
 	text-transform: capitalize;
 }
+
+/* Bootstrap Additions */
+
+.white{
+	color: #ffffff;
+}
+.white:hover{
+	color: #00d9ff;
+}
+
+.navbar-nav > li{
+	padding: 1rem;
+}
