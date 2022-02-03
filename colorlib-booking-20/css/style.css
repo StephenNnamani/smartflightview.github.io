@@ -173,5 +173,11 @@
 }
 
 .navbar-nav > li{
+	padding-top: 2rem;
 	padding: 1rem;
+	margin-bottom: auto;
+}
+
+.navbar{
+	margin-bottom: auto;
 }
