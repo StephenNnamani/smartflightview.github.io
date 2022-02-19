@@ -1,11 +1,8 @@
 const express = require('express')
 const router = express()
 
-router.post('/', (req, res)=> {
-    res.send("Visa plans are available here")
+router.get('/visa', (req, res)=>{
+    res.render('visa.ejs')
 })
-
-
-
 
 module.exports = router

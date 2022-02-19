@@ -581,6 +581,13 @@ form.blackbg{
 /*-- //responsive--*/
 /* Bootstrap Additions */
 
+.navbar-light .navbar-toggler-icon{
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 208, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-toggler {
+	border: 1px solid rgb(255, 208, 0) !important;
+}
+
 .white{
 	color: #ffffff;
 }
@@ -592,3 +599,25 @@ form.blackbg{
 	padding: 0.5rem;
 }
 
+.visa{
+	margin-top: 5%;
+	padding: 3%;
+	background-color: rgba(157, 94, 0, 0.45);
+	text-align: center;
+
+}
+
+.visa h3{
+	font-size: 200%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: bold;
+	color: #fff;
+	padding-bottom: 3%;
+}
+
+.visa p{
+	padding-bottom: 3%;
+}
+.visa button:hover{
+	background-color: rgb(2, 200, 100);
+}

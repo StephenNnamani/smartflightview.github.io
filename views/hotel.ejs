@@ -9,7 +9,7 @@
 			</div>
 			<div class="col-md-6 col-md-offset-1">
 				<div class="booking-form">
-					<form>
+					<form method="get" action="/hote/hotel%20search>
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -61,23 +61,26 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input class="form-control" type="date" required>
+									<input class="" type="date" required>
 									<span class="form-label">Check In</span>
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="form-group">
-									<input class="form-control" type="date" required>
-									<span class="form-label">Check Out</span>
-								</div>
+								<span class="form-label">Location</span>
+								<select class="form-control">
+									<option></option>
+								</select>
 							</div>
 						</div>
 						<div class="form-btn">
-							<button class="submit-btn">Book Now</button>
+							<button class="submit-btn">Search for Rooms</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="footer-w3l">
+		<p class="agileinfo" style="color: white;"> &copy; 2022 Smart Flights . All Rights Reserved | Design by ------- <a style="color: white" href="http://github.com/stephennnamani">Nnamani Stephen</a></p>
 	</div>
     <%- include('partials/footerH') %>
