@@ -1,4 +1,47 @@
-    <%- include('partials/header') %>
+<body class="hotel">
+	<nav class="navbar navbar-expand-lg bg-dark navbar-static">
+		<div class="container-fluid container">
+		  <img src="/Public/images/Logo.png" alt="Smart booking Logo">
+		  <a class="navbar-brand white" href="/">Smart Flight</a>
+		  <button class="navbar-toggler navbar-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="ml-auto collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active white" aria-current="page" href="/">Flight Booking</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link white" href="/hotel">Hotel Booking</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link white" href="/visa" tabindex="-1" aria-disabled="true">Visa Services</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link white" href="/contact" tabindex="-1" aria-disabled="true">Contacts</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link white btn btn-danger" href="/about" tabindex="-1" aria-disabled="true">About</a>
+			  </li>
+			  <!-- <li class="nav-item">
+				<a class="nav-link white" href="/contact" tabindex="-1" aria-disabled="true">Contact</a>
+			  </li> -->
+			  <li class="nav-item">
+				<!-- <a class="nav-link white" href="/login" tabindex="-1" aria-disabled="true"><i class="fa fa-login"> Login</i></a> -->
+			  </li>
+			</ul>
+			<!-- <form class="d-flex">
+			  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			  <button class="btn btn-outline-success" type="submit">Search</button>
+			</form> -->
+		  </div>
+		</div>
+	  </nav>
+	<script>
+		var cities = fetch('https://countriesnow.space/api/v0.1/countries', ()=>{
+		}).then
+	</script>
+	<%- include('partials/header') %>
 	<div class="middle-item">
 		<div class="row container-fluid">
 			<div class="col-md-5">
@@ -61,15 +104,13 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input class="" type="date" required>
+									<input class="form-control" type="date" required>
 									<span class="form-label">Check In</span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<span class="form-label">Location</span>
-								<select class="form-control">
-									<option></option>
-								</select>
+								<input class="form-control" type="text" placeholder="Location">
 							</div>
 						</div>
 						<div class="form-btn">
@@ -80,7 +121,5 @@
 			</div>
 		</div>
 	</div>
-	<div class="footer-w3l">
-		<p class="agileinfo" style="color: white;"> &copy; 2022 Smart Flights . All Rights Reserved | Design by ------- <a style="color: white" href="http://github.com/stephennnamani">Nnamani Stephen</a></p>
-	</div>
-    <%- include('partials/footerH') %>
+	<hr style="margin-top: 50%;">
+    <%- include('partials/footer') %>

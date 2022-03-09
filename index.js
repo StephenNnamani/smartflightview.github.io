@@ -1,11 +1,10 @@
 const express                           = require('express');
 const app                               = express();
 const mysql                             = require('mysql');
-const bodyparser                        = require('body-parser');
-const fs                                = require('fs');
-const http                              = require('http');
-const express_session                   = require('express-session');
-const port                              = process.env.port
+// const bodyparser                        = require('body-parser');
+// const fs                                = require('fs');
+// const http                              = require('http');
+// const express_session                   = require('express-session');
 const dotenv                            = require('dotenv').config()
 var Amadeus                             = require('amadeus');
 
@@ -15,6 +14,7 @@ var Amadeus                             = require('amadeus');
 //   clientSecret: process.env['AMADEUS_CLIENT_SECRET']
 // });
 
+var port                             = process.env.PORT
 var amadeus = new Amadeus({
   clientId:       process.env.AMADEUS_CLIENT_ID,
   clientSecret:   process.env.AMADEUS_CLIENT_SECRET
@@ -31,17 +31,9 @@ app.use("/Public", express.static('./Public/'));
 var hotelRouter   = require('../smartflightview.github.io/routes/hotels')
 var flightRouter  = require('../smartflightview.github.io/routes/flights')
 var visaRouter    = require('../smartflightview.github.io/routes/visa')
+var contactRouter = require('../smartflightview.github.io/routes/contact')
 
-// Getting all the necessary Routes
-// -------------- Index -------------------------
-// var townFrom            = "ABJ",  countryTo           = "SYN",  departureDate       = "2022-02-29",
-//   returnDate          = "2023-04-22",
-//   adults              = 3,
-//   minor               = 5,
-//   flightClass         = "Economy"
-// fetch('https://test.api.amadeus.com/v3').then((data)=>{
-//         console.log(data)
-//     })
+
     amadeus.shopping.flightOffersSearch.get({ 
       originLocationCode: 'BOS', 
       destinationLocationCode: 'LON', 
@@ -55,30 +47,13 @@ var visaRouter    = require('../smartflightview.github.io/routes/visa')
 
   app.get('/', (req, res)=>{
     res.render('index.ejs')
-// app.get('/', (req, res)=>{
-//     res.render('index.ejs')
-//     fetch('https://test.api.amadeus.com/v3').then((data)=>{
-//         console.log(data)
-//     })
-//     amadeus.shopping.flightOffersSearch.get({
-//       originLocationCode:             `${townFrom}`,
-//       destinationLocationCode:        `${countryTo}`,
-//       departureDate:                  `${departureDate}`,
-//       returnDate:                     `${returnDate}`,
-//       adults:                         `${adults}`,
-//       minor:                          `${minor}`,
-//       flightClass:                    `${flightClass}`
-//   }).then(function(response){
-//     console.log(response.data);
-//   }).catch(function(responseError){
-//     console.log(responseError.code);
-//   });
-  
+
  })
 // ----------------- Other External Routes -----------------------
 app.get('/hotel', hotelRouter)
 app.get('/flight%20search', flightRouter)
 app.get('/visa', visaRouter)
+app.get('/contact', contactRouter)
 
 
 
@@ -104,3 +79,40 @@ app.use(function(err, req, res, next){
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)
 })
+
+
+
+
+
+
+
+// app.get('/', (req, res)=>{
+//     res.render('index.ejs')
+//     fetch('https://test.api.amadeus.com/v3').then((data)=>{
+//         console.log(data)
+//     })
+//     amadeus.shopping.flightOffersSearch.get({
+//       originLocationCode:             `${townFrom}`,
+//       destinationLocationCode:        `${countryTo}`,
+//       departureDate:                  `${departureDate}`,
+//       returnDate:                     `${returnDate}`,
+//       adults:                         `${adults}`,
+//       minor:                          `${minor}`,
+//       flightClass:                    `${flightClass}`
+//   }).then(function(response){
+//     console.log(response.data);
+//   }).catch(function(responseError){
+//     console.log(responseError.code);
+//   });
+  
+
+// Getting all the necessary Routes
+// -------------- Index -------------------------
+// var townFrom            = "ABJ",  countryTo           = "SYN",  departureDate       = "2022-02-29",
+//   returnDate          = "2023-04-22",
+//   adults              = 3,
+//   minor               = 5,
+//   flightClass         = "Economy"
+// fetch('https://test.api.amadeus.com/v3').then((data)=>{
+//         console.log(data)
+//     })
